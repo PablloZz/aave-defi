@@ -1,0 +1,21 @@
+{
+  "ts-node": {
+    "compilerOptions": {
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext"
+    }
+  },
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "declaration": true,
+    "skipLibCheck": true,
+    "baseUrl": "."
+  },
+  "include": ["./test", "./tasks", "./typechain", "./scripts"],
+  "files": ["hardhat.config.ts"]
+}
