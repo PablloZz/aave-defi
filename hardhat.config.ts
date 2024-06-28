@@ -16,7 +16,6 @@ const config: HardhatUserConfig = {
       forking: {
         url: MAINNET_RPC_URL,
       },
-      allowUnlimitedContractSize: true,
     },
     localhost: {
       chainId: 31337,

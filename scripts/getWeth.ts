@@ -12,9 +12,13 @@ async function getWeth() {
     deployer,
   )) as Contract & IWeth;
 
-  const transactionResponse = await iWeth.deposit({ value: VALUE_TO_DEPOSIT });
-  transactionResponse.wait(1);
-  const wethBalance = await iWeth.balanceOf(deployer);
+  const transactionResponse = await iWeth.deposit({
+    value: VALUE_TO_DEPOSIT,
+    maxFeePerGas: ethers.parseEther("0.0000001"),
+  });
+  
+  await transactionResponse.wait(1);
+  const wethBalance = await iWeth.balanceOf(deployer.address);
   console.log(`Got ${ethers.formatEther(wethBalance)}`);
 }
 
