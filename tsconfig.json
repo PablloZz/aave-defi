@@ -6,6 +6,7 @@
     }
   },
   "compilerOptions": {
+    "resolveJsonModule": true,
     "target": "ESNext",
     "module": "NodeNext",
     "strict": true,

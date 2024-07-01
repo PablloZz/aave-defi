@@ -14,12 +14,12 @@ async function getWeth() {
 
   const transactionResponse = await iWeth.deposit({
     value: VALUE_TO_DEPOSIT,
-    maxFeePerGas: ethers.parseEther("0.0000001"),
+    maxFeePerGas: ethers.parseEther("0.0000002"),
   });
-  
+
   await transactionResponse.wait(1);
   const wethBalance = await iWeth.balanceOf(deployer.address);
-  console.log(`Got ${ethers.formatEther(wethBalance)}`);
+  console.log(`Got ${ethers.formatEther(wethBalance)} WETH`);
 }
 
-export { getWeth };
+export { getWeth, VALUE_TO_DEPOSIT };
